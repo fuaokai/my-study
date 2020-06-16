@@ -5,13 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.fsr</groupId>
-        <artifactId>maven-parent</artifactId>
+        <groupId>org.fuaokai.study</groupId>
+        <artifactId>my-study-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../maven-parent/pom.xml</relativePath>
     </parent>
 
-    <groupId>com.fsr</groupId>
+    <groupId>org.fuaokai.study</groupId>
     <artifactId>simple-study</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>simple-study</name>
