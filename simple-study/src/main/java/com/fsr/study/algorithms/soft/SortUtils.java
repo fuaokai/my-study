@@ -15,4 +15,9 @@ public class SortUtils {
         unsorted[i] = unsorted[j];
         unsorted[j] = temp;
     }
+
+
+    public static <T extends Comparable> boolean less(T v, T w){
+        return v.compareTo(w) < 0;
+    }
 }
