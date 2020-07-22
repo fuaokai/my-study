@@ -17,7 +17,10 @@
         <spring.boot.version>2.2.7.RELEASE</spring.boot.version>
         <spring.cloud.version>Hoxton.SR5</spring.cloud.version>
         <lombok.version>1.18.8</lombok.version>
+        <zxing.version>3.3.3</zxing.version>
         <junit.version>4.12</junit.version>
+        <fastjson.version>1.2.68</fastjson.version>
+        <apache.httpclient.version>4.5.7</apache.httpclient.version>
     </properties>
 
     <dependencyManagement>
@@ -48,6 +51,26 @@
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${zxing.version}</version>
+            </dependency><!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${apache.httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>fluent-hc</artifactId>
+                <version>${apache.httpclient.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -69,6 +92,22 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>fluent-hc</artifactId>
         </dependency>
     </dependencies>
 </project>
