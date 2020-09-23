@@ -1,10 +1,8 @@
 package com.fsr.study.image;
 
-import com.alibaba.fastjson.JSONObject;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
-import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import org.apache.http.HttpEntity;
@@ -16,18 +14,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
 import javax.imageio.ImageIO;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,9 +30,9 @@ import java.util.Map;
  * @apiNote GenerateImageApplication
  * @create 2020/7/20 13:47
  */
-public class GenerateImageApplication {
+public class LancomeGenerateImageApplication {
 
-    private static final Logger logger = LoggerFactory.getLogger(GenerateImageApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(LancomeGenerateImageApplication.class);
 
     private static final int QR_WIDTH = 400;
     private static final int QR_HEIGHT = 400;
@@ -63,7 +54,7 @@ public class GenerateImageApplication {
         HttpEntity httpEntity = response.returnResponse().getEntity();
         System.out.println(EntityUtils.toString(httpEntity));
 
-//        createQRCode("d:\\bg.png", "d:\\logo.jpg", "d:\\qr.png", "张三", "兰蔻专柜·实习顾问 产品经理");
+        createQRCode("d:\\jfx\\bg.png", "d:\\logo.jpg", "d:\\qr.png", "张三", "兰蔻专柜·实习顾问 产品经理");
 //        BufferedImage bim1 = createQRCode("http://www.baidu.com", "D:\\logo.jpg", "新图片嗷");
 //        BufferedImage bim2 = createQRCode("http://www.baidu.com", "D:\\logo.jpg", null);
 //        BufferedImage bim3 = createQRCode("http://www.baidu.com", null, null);
@@ -171,15 +162,16 @@ public class GenerateImageApplication {
 
         if (!StringUtils.isEmpty(name)) {
             graphics = bgImage.createGraphics();
-            graphics.setFont(new Font("思源黑体 CN Medium", Font.ROMAN_BASELINE, 36));
-            graphics.setColor(Color.BLACK);
+//            graphics.setFont(new Font("思源黑体 CN Medium", Font.ROMAN_BASELINE, 36));
+            graphics.setFont(new Font("苹方-简", Font.ROMAN_BASELINE, 36));
+            graphics.setColor(Color.WHITE);
             graphics.drawString(name, (bgWidth - graphics.getFontMetrics().stringWidth(name)) / 2, partHeight + avatarHeight + 100);
             graphics.dispose();
         }
         if (!StringUtils.isEmpty(title)) {
             graphics = bgImage.createGraphics();
-            graphics.setFont(new Font("思源黑体 CN Medium", Font.ROMAN_BASELINE, 28));
-            graphics.setColor(new Color(189, 39, 101));
+            graphics.setFont(new Font("苹方-简", Font.ROMAN_BASELINE, 28));
+            graphics.setColor(Color.WHITE);
             graphics.drawString(title, (bgWidth - graphics.getFontMetrics().stringWidth(title)) / 2, partHeight + avatarHeight + 170);
             graphics.dispose();
         }
@@ -208,10 +200,6 @@ public class GenerateImageApplication {
         graphics.drawOval(border, border, avatarWidth - border, avatarHeight - border);
         graphics.dispose();
         return roundImage;
-    }
-
-    public static void createFont() {
-
     }
 
     private static BufferedImage getUrlImage(String url) {
