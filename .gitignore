@@ -1,5 +1,18 @@
-/target
+*.class
+.idea
+.mvn
+.publish
 *.iml
+~$*
+target
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
 
 #ignore thumbnails created by windows
 Thumbs.db
