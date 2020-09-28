@@ -10,6 +10,18 @@ package com.fsr.design.behavior.state;
  */
 public class ProblemState {
 
+    public static void main(String[] args) {
+        Work work = new Work();
+
+        work.problem(1);
+        work.problem(6);
+        work.problem(13);
+        work.problem(17);
+        work.setFinish(true);
+        work.problem(20);
+        work.problem(23);
+    }
+
     static boolean WORK_FINISHED = false;
     public static void problem(int hour) {
         if (hour < 12) {
